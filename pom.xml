@@ -56,4 +56,22 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>etown-nexus-snapshots</id>
+            <url>https://nexus-bos.englishtown.com/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>etown-nexus-releases</id>
+            <url>https://nexus-bos.englishtown.com/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com/ef-labs/thrift-mock.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/ef-labs/thrift-mock.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/ef-labs/thrift-mock</url>
+    </scm>
+
 </project>
