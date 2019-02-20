@@ -4,7 +4,7 @@
     <packaging>pom</packaging>
     <groupId>com.xiaoju.ddpay</groupId>
     <artifactId>thrift-mock</artifactId>
-    <version>0.1.0-EF2-SNAPSHOT</version>
+    <version>0.1.0-EF2</version>
 
     <modules>
         <module>thrift-mock-test-source</module>
@@ -68,7 +68,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/ef-labs/thrift-mock.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/ef-labs/thrift-mock.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>thrift-mock-0.1.0-EF2</tag>
         <url>https://github.com/ef-labs/thrift-mock</url>
     </scm>
 
