@@ -11,6 +11,7 @@ import java.util.function.Function;
 
 public class ThriftMockServer extends ExternalResource implements MockServer {
 
+  private com.xiaoju.ddpay.thriftmock.server.ServerConfig serverConfig;
   private com.xiaoju.ddpay.thriftmock.server.ThriftMockServer mockServer;
 
 
@@ -19,17 +20,18 @@ public class ThriftMockServer extends ExternalResource implements MockServer {
   }
 
   public ThriftMockServer(ServerConfig serverConfig) {
+    this.serverConfig = serverConfig;
     this.mockServer = new com.xiaoju.ddpay.thriftmock.server.ThriftMockServer(serverConfig);
   }
 
   @Override
-  protected void before() throws Throwable {
+  public void before() throws Throwable {
     Thread thread = new Thread(this::start);
     thread.start();
   }
 
   @Override
-  protected void after() {
+  public void after() {
     mockServer.stop();
   }
 
@@ -63,5 +65,9 @@ public class ThriftMockServer extends ExternalResource implements MockServer {
   public void setExpectReturn(String methodName, TBase emptyArgs,
                               Function<TBase, TBase> mockResultFunction) {
     mockServer.setExpectReturn(methodName, emptyArgs, mockResultFunction);
+  }
+
+  public ServerConfig getServerConfig() {
+    return serverConfig;
   }
 }
